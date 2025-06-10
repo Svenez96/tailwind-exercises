@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Mode Funzionante</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+      theme: {
+        extend: {
+          colors: {
+            primary: "#C70039",
+            secondary: "#2c2c2c"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="transition-colors dark:bg-secondary dark:text-white p-4">
+    <h2 class="text-2xl font-bold mb-3">Questo testo cambia automaticamente colore con la dark mode</h2>
+    <p class="mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla qui distinctio, perferendis amet!</p>
+</body>
+</html>

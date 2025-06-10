@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark Mode Funzionante</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: "#C70039",
+            secondary: "#2c2c2c"
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="transition-colors bg-white text-black">
+
+  <div class="p-6">
+    <h2 class="text-2xl font-bold mb-3">Questo testo cambia colore cliccando sul pulsante della dark mode</h2>
+    <p class="mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla qui distinctio, perferendis amet!</p>
+
+    <button id="darkModeToggle" class="px-4 py-2 border border-primary rounded-lg shadow-md hover:bg-primary hover:text-white transition">
+      Darkmode: <span id="darkModeStatus">Inactive</span>
+    </button>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById("darkModeToggle");
+    const statusSpan = document.getElementById("darkModeStatus");
+
+    toggleButton.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+
+      const isDark = document.documentElement.classList.contains("dark");
+      statusSpan.textContent = isDark ? "Active" : "Inactive";
+
+      document.body.className = isDark
+        ? "transition-colors dark:bg-secondary dark:text-white"
+        : "transition-colors bg-white text-black";
+    });
+  </script>
+
+</body>
+</html>
