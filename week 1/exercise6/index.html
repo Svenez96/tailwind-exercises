@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: "#0E653B",
+              secondary: '#B9CF35'
+            },
+            fontfamily:{
+              sans:['Poppins', 'sans-serif']
+            },
+            spacing: {
+              '64': '16rem',
+              '128':'32rem',
+            },
+          },
+        },
+      };
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-black">
+    <div class="flex items-center justify-center h-screen">
+      <div class=" border-8 border-secondary bg-brand w-128 h-128 flex items-center justify-center">
+        <p class="text-white fontfamily text-2xl ">
+          Il tuo premio ti aspetta 🎁 Clicca per scoprirlo!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
