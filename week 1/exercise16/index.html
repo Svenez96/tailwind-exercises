@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layer and Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff2424",
+              secondary: "#00c5ff",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer components {
+        .btn {
+          @apply border border-2 border-black px-5 py-2 rounded;
+        }
+
+        .primary-btn {
+          @apply btn text-white bg-primary hover:opacity-95 active:border;
+        }
+
+        .secondary-btn {
+          @apply btn text-white bg-secondary hover:opacity-95 active:border;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-10">
+    <div class="p-4">
+      <button class="btn">Pulsante 1</button>
+    </div>
+    <div class="p-4">
+      <button class="primary-btn">Pulsante 2</button>
+    </div>
+    <div class="p-4">
+      <button class="secondary-btn">Pulsante 3</button>
+    </div>
+  </body>
+</html>
