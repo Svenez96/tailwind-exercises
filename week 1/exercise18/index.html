@@ -1,72 +1,30 @@
 <!DOCTYPE html>
 <html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gerarchia Stili - Tailwind</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1d4ed8',
-            secondary: '#9333ea',
-          },
-          borderRadius: {
-            card: '0.75rem',
-          },
-          boxShadow: {
-            soft: '0 4px 12px rgba(0, 0, 0, 0.06)',
-          },
-        },
-      },
-    };
-  </script>
-  <style type="text/tailwindcss">
-    /* Classi personalizzate riutilizzabili */
-    .btn {
-      @apply font-medium py-2 px-4 rounded;
-    }
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer base {
+        h1 {
+          @apply text-2xl;
+        }
+      }
 
-    .btn-primary {
-      @apply bg-primary text-white hover:bg-blue-700;
-    }
+      @layer components {
+        .btn {
+          @apply bg-blue-500 text-white px-4 py-2 rounded;
+        }
+      }
 
-    .card {
-      @apply bg-white p-6 rounded-card shadow-soft text-gray-800;
-    }
-
-    .card-header {
-      @apply text-xl font-semibold mb-2;
-    }
-
-    .card-body {
-      @apply text-gray-600;
-    }
-  </style>
-</head>
-<body class="bg-gray-100 p-8 space-y-8">
-
-  <!--Classi base direttamente nel markup -->
-  <div class="bg-white p-4 rounded shadow text-gray-700">
-    <h2 class="text-lg font-bold mb-2">Stile Base</h2>
-    <p>Questo box usa solo classi Tailwind inline.</p>
-  </div>
-
-  <!-- Usa classi riutilizzabili con @apply -->
-  <div class="card max-w-md mx-auto">
-    <h2 class="card-header">Stile Riutilizzabile</h2>
-    <p class="card-body">Questa card usa classi personalizzate con @apply.</p>
-    <button class="btn btn-primary mt-4">Azione</button>
-  </div>
-
-  <!-- Override con classi inline -->
-  <div class="card max-w-md mx-auto">
-    <h2 class="card-header text-secondary">Override Inline</h2>
-    <p class="card-body">Qui sovrascriviamo il colore usando una classe inline.</p>
-    <button class="btn btn-primary bg-red-600 hover:bg-red-700">Attenzione</button>
-  </div>
-
-</body>
+      @layer utilities {
+        .text-shadow {
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+      }
+    </style>
+  </head>
+  <body class="p-10">
+    <h1>Ciao mondo</h1>
+    <button class="btn text-shadow">Cliccami</button>
+  </body>
 </html>
+
