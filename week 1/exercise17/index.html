@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Componenti Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6",
+              primaryHover: "#2563eb",
+              cardBg: "#f9fafb",
+            },
+            borderRadius: {
+              md: "0.5rem",
+              lg: "1rem",
+            },
+            boxShadow: {
+              card: "0 4px 12px rgba(0, 0, 0, 0.05)",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      .btn-primary {
+        @apply bg-primary text-white font-semibold py-2 px-4 rounded-md transition hover:bg-primaryHover;
+      }
+
+      .card {
+        @apply bg-cardBg p-6 rounded-lg shadow-card text-gray-800;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 p-10">
+    <div class="card max-w-sm mx-auto">
+      <h2 class="text-xl font-bold mb-2">Balance in Design</h2>
+      <p class="mb-4">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore, vero.
+      </p>
+      <button class="btn-primary">Learn More</button>
+    </div>
+  </body>
+</html>
