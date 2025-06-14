@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Condizionali - Tailwind CSS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+
+  <h1 class="text-2xl font-bold mb-6 text-center">Elementi Condizionali</h1>
+
+  <div class="bg-blue-500 text-white p-4 rounded text-center md:hidden">
+    Visibile solo su mobile
+  </div>
+
+  <div class="bg-green-500 text-white p-4 rounded text-center hidden md:block lg:hidden mt-4">
+    Visibile solo su tablet
+  </div>
+
+  <div class="bg-purple-500 text-white p-4 rounded text-center hidden lg:block mt-4">
+    Visibile solo su desktop
+  </div>
+
+</body>
+</html>
